@@ -32,8 +32,9 @@
 				--light-gray: #e5e5e5;
 				--pale-gray: #f5f5f5;
 				--white: #ffffff;
-				--accent: #ff6f0f;
-				--accent-dark: #e55f0e;
+				--accent: #00A1FF;
+				--accent-dark: #0087D9;
+				--accent-soft: #EAF7FF;
 				--border: #e0e0e0;
 			}
 
@@ -59,6 +60,14 @@
 
 				.resume-page .header {
 					padding: 14px 0 12px;
+					grid-template-columns: minmax(0, 1fr) 92px;
+					column-gap: 16px;
+				}
+
+				.resume-page .profile-frame {
+					width: 92px;
+					height: 92px;
+					box-shadow: none;
 				}
 
 				.resume-page .content {
@@ -69,8 +78,28 @@
 					margin-bottom: 16px;
 				}
 
+				.resume-page .about-section {
+					padding: 14px;
+					margin-bottom: 16px;
+				}
+
+				.resume-page .about-body {
+					font-size: 11px;
+					line-height: 1.55;
+				}
+
+				.resume-page .snapshot-card {
+					min-height: auto;
+					padding: 8px;
+				}
+
+				.resume-page .career-map {
+					padding: 10px;
+				}
+
 				.resume-page .experience-item,
-				.resume-page .project-item {
+				.resume-page .project-item,
+				.resume-page .career-map {
 					break-inside: avoid;
 					page-break-inside: avoid;
 				}
@@ -79,6 +108,7 @@
 					break-after: avoid;
 					page-break-after: avoid;
 				}
+
 			}
 
 			.resume-page * {
@@ -104,7 +134,7 @@
 			}
 
 			.resume-page .container {
-				max-width: 800px;
+				max-width: 820px;
 				margin: 0 auto;
 				background: var(--white);
 				box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
@@ -112,12 +142,17 @@
 
 			/* Minimal CV Header */
 			.resume-page .header {
-				display: block;
+				display: grid;
+				grid-template-columns: minmax(0, 1fr) 112px;
+				column-gap: 24px;
+				align-items: start;
 				padding: 28px 40px 18px;
 				border-bottom: 2px solid var(--accent);
 			}
 
 			.resume-page .header-left {
+				grid-column: 1;
+				grid-row: 1;
 				display: flex;
 				align-items: baseline;
 				flex-wrap: wrap;
@@ -125,6 +160,7 @@
 				margin-bottom: 6px;
 				padding: 0;
 				background: transparent;
+				min-width: 0;
 			}
 
 			.resume-page .header-left::before {
@@ -141,11 +177,11 @@
 			}
 
 			.resume-page .title {
-				font-size: 13px;
-				font-weight: 500;
-				color: var(--accent);
+				font-size: 12px;
+				font-weight: 400;
+				color: var(--stone);
 				letter-spacing: 0.02em;
-				opacity: 1;
+				overflow-wrap: anywhere;
 			}
 
 			.resume-page .years-indicator {
@@ -171,10 +207,41 @@
 			}
 
 			.resume-page .header-right {
+				grid-column: 1;
+				grid-row: 2;
 				padding: 0;
 				background: transparent;
 				margin-top: 6px;
 				display: block;
+				min-width: 0;
+			}
+
+			.resume-page .profile-frame {
+				grid-column: 2;
+				grid-row: 1 / span 2;
+				justify-self: end;
+				width: 112px;
+				height: 112px;
+				border-radius: 50%;
+				padding: 0;
+				background: var(--white);
+				border: none;
+				box-shadow: none;
+				outline: none;
+				overflow: hidden;
+			}
+
+			.resume-page .profile-photo {
+				display: block;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				border: none;
+				box-shadow: none;
+				outline: none;
+				object-fit: cover;
+				object-position: 61% 35%;
+				filter: grayscale(100%);
 			}
 
 			.resume-page .contact-list {
@@ -228,32 +295,141 @@
 
 			/* About Section - minimal */
 			.resume-page .about-section {
-				margin-bottom: 28px;
-				padding: 0;
-				background: transparent;
-				border-left: none;
+				margin-bottom: 22px;
+				padding: 18px 18px 16px;
+				background: linear-gradient(180deg, var(--white) 0%, #f9fcff 100%);
+				border: 1px solid var(--light-gray);
+				border-left: 4px solid var(--accent);
 				position: relative;
 			}
 
+			.resume-page .about-kicker {
+				font-family: "Archivo", sans-serif;
+				font-size: 11px;
+				font-weight: 800;
+				color: var(--accent-dark);
+				text-transform: uppercase;
+				letter-spacing: 0.08em;
+				margin-bottom: 8px;
+			}
+
 			.resume-page .about-text {
-				font-size: 14px;
+				font-size: 15px;
 				line-height: 1.55;
 				color: var(--ink);
-				font-weight: 600;
-				margin: 0;
+				font-weight: 700;
+				margin: 0 0 10px;
 				letter-spacing: -0.01em;
 			}
 
 			.resume-page .about-text strong {
 				font-weight: 700;
-				color: var(--accent);
+				background: var(--accent);
+				color: var(--white);
+				padding: 0 2px;
 			}
 
 			.resume-page .about-body {
-				font-size: 13px;
-				line-height: 1.7;
+				font-size: 12.5px;
+				line-height: 1.72;
 				color: var(--charcoal);
-				margin-top: 8px;
+				margin-top: 0;
+			}
+
+			.resume-page .about-body + .about-body {
+				margin-top: 7px;
+			}
+
+			.resume-page .overview-section {
+				margin-bottom: 24px;
+			}
+
+			.resume-page .snapshot-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 8px;
+				margin-bottom: 12px;
+			}
+
+			.resume-page .snapshot-card {
+				min-height: 86px;
+				padding: 10px;
+				border: 1px solid var(--light-gray);
+				background: var(--white);
+			}
+
+			.resume-page .snapshot-label {
+				display: block;
+				font-family: "Archivo", sans-serif;
+				font-size: 10px;
+				font-weight: 800;
+				color: var(--stone);
+				text-transform: uppercase;
+				letter-spacing: 0.06em;
+				margin-bottom: 5px;
+			}
+
+			.resume-page .snapshot-value {
+				font-size: 12px;
+				line-height: 1.45;
+				font-weight: 700;
+				color: var(--ink);
+				white-space: nowrap;
+				word-break: keep-all;
+				overflow-wrap: normal;
+			}
+
+			.resume-page .snapshot-note {
+				margin-top: 4px;
+				font-size: 10.5px;
+				line-height: 1.4;
+				color: var(--medium-gray);
+			}
+
+			.resume-page .career-map {
+				display: grid;
+				grid-template-columns: 118px 1fr;
+				gap: 8px 12px;
+				padding: 12px;
+				border: 1px solid var(--light-gray);
+				background: #fbfbfb;
+			}
+
+			.resume-page .map-period {
+				font-size: 11px;
+				font-weight: 700;
+				color: var(--charcoal);
+				padding-top: 2px;
+			}
+
+			.resume-page .map-track {
+				position: relative;
+				min-height: 34px;
+				padding-left: 12px;
+			}
+
+			.resume-page .map-track::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 4px;
+				bottom: 4px;
+				width: 3px;
+				background: var(--accent);
+			}
+
+			.resume-page .map-title {
+				font-size: 12.5px;
+				font-weight: 800;
+				color: var(--ink);
+				line-height: 1.35;
+			}
+
+			.resume-page .map-detail {
+				margin-top: 2px;
+				font-size: 11.5px;
+				line-height: 1.45;
+				color: var(--medium-gray);
 			}
 
 			.resume-page .about-list {
@@ -310,15 +486,13 @@
 			}
 
 			.resume-page .section-number {
-				width: auto;
-				height: auto;
-				background: transparent;
-				color: var(--accent);
-				border-radius: 0;
-				display: inline;
+				background: var(--accent);
+				color: var(--white);
+				border-radius: 2px;
+				display: inline-block;
 				font-weight: 700;
-				font-size: 12px;
-				margin-right: 0;
+				font-size: 11px;
+				padding: 1px 5px;
 				font-family: "Archivo", sans-serif;
 				letter-spacing: 0.04em;
 			}
@@ -356,7 +530,7 @@
 			.resume-page .experience-date {
 				font-size: 12px;
 				font-weight: 600;
-				color: var(--accent);
+				color: var(--charcoal);
 				letter-spacing: 0;
 			}
 
@@ -424,59 +598,6 @@
 			.resume-page .experience-list strong {
 				font-weight: 700;
 				color: var(--ink);
-			}
-
-			/* Skills - inline minimal */
-			.resume-page .skills-container {
-				display: grid;
-				grid-template-columns: 130px 1fr;
-				gap: 16px 24px;
-				row-gap: 6px;
-			}
-
-			.resume-page .skill-card {
-				display: contents;
-				padding: 0;
-				background: transparent;
-				border: none;
-			}
-
-			.resume-page .skill-card::before {
-				display: none;
-			}
-
-			.resume-page .skill-card-title {
-				font-size: 12px;
-				font-weight: 700;
-				color: var(--accent);
-				margin: 0;
-				text-transform: uppercase;
-				letter-spacing: 0.04em;
-				padding-top: 2px;
-			}
-
-			.resume-page .skill-tags {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 5px;
-			}
-
-			.resume-page .skill-tag {
-				padding: 2px 8px;
-				background: transparent;
-				color: var(--charcoal);
-				border-radius: 3px;
-				font-size: 12px;
-				font-weight: 500;
-				border: 1px solid var(--light-gray);
-				transition: none;
-			}
-
-			.resume-page .skill-tag:hover {
-				background: transparent;
-				color: var(--accent);
-				border-color: var(--accent);
-				transform: none;
 			}
 
 			/* Projects - minimal */
@@ -602,7 +723,7 @@
 
 			.resume-page .education-date {
 				font-size: 12px;
-				color: var(--accent);
+				color: var(--charcoal);
 				font-weight: 600;
 			}
 
@@ -649,6 +770,10 @@
 			/* Testimonials Section */
 			.resume-page .testimonials-section {
 				margin-bottom: 0;
+			}
+
+			.resume-page .education-section {
+				margin-top: 8px;
 			}
 
 			.resume-page .testimonial-grid {
@@ -698,12 +823,66 @@
 
 			/* Responsive */
 			@media (max-width: 768px) {
+				.resume-page .header {
+					grid-template-columns: minmax(0, 1fr) 96px;
+				}
+
+				.resume-page .profile-frame {
+					width: 96px;
+					height: 96px;
+				}
+
+				.resume-page .snapshot-grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.resume-page .snapshot-value {
+					white-space: normal;
+				}
+
 				.resume-page .experience-item {
 					grid-template-columns: 1fr;
 					gap: 16px;
 				}
 
-				.resume-page .skills-container {
+			}
+
+			@media (max-width: 600px) {
+				.resume-page .header {
+					grid-template-columns: minmax(0, 1fr) 76px;
+					padding: 22px 16px 18px;
+					column-gap: 14px;
+				}
+
+				.resume-page .header-left {
+					gap: 8px;
+				}
+
+				.resume-page .title,
+				.resume-page .years-indicator {
+					flex-basis: 100%;
+				}
+
+				.resume-page .years-indicator {
+					margin-left: 0;
+					margin-top: 0;
+				}
+
+				.resume-page .header-right {
+					grid-column: 1 / -1;
+					grid-row: 2;
+					margin-top: 12px;
+				}
+
+				.resume-page .profile-frame {
+					grid-column: 2;
+					grid-row: 1;
+					width: 76px;
+					height: 76px;
+				}
+
+				.resume-page .snapshot-grid,
+				.resume-page .career-map {
 					grid-template-columns: 1fr;
 				}
 			}
@@ -716,33 +895,47 @@
 
 				/* Header: stack vertically */
 				.resume-page .header {
-					grid-template-columns: 1fr;
+					grid-template-columns: minmax(0, 1fr) 76px;
 					min-height: auto;
+					padding: 22px 16px 18px;
+					column-gap: 14px;
 				}
 				.resume-page .header-left {
-					padding: 28px 20px;
+					padding: 0;
+					gap: 8px;
+					margin-bottom: 4px;
 				}
 				.resume-page .header-left::before {
 					display: none;
 				}
 				.resume-page .name {
-					font-size: 32px;
-					margin-bottom: 8px;
+					font-size: 28px;
+					margin-bottom: 0;
 				}
 				.resume-page .title {
-					font-size: 14px;
+					font-size: 12px;
 				}
 				.resume-page .years-indicator {
-					margin-top: 16px;
+					margin-top: 4px;
+					margin-left: 0;
 				}
 				.resume-page .header-right {
-					padding: 24px 20px;
+					grid-column: 1 / -1;
+					grid-row: 2;
+					padding: 0;
+					margin-top: 12px;
+				}
+				.resume-page .profile-frame {
+					width: 76px;
+					height: 76px;
+					grid-column: 2;
+					grid-row: 1;
 				}
 				.resume-page .contact-list {
-					gap: 14px;
+					gap: 8px 12px;
 				}
 				.resume-page .contact-text {
-					font-size: 13px;
+					font-size: 12px;
 					word-break: break-all;
 				}
 
@@ -753,8 +946,8 @@
 
 				/* About */
 				.resume-page .about-section {
-					padding: 20px;
-					margin-bottom: 36px;
+					padding: 16px;
+					margin-bottom: 28px;
 				}
 				.resume-page .about-text {
 					font-size: 15px;
@@ -770,6 +963,21 @@
 				.resume-page .about-body br {
 					display: none;
 				}
+				.resume-page .motivation-panel {
+					padding: 16px;
+				}
+				.resume-page .motivation-copy {
+					font-size: 13px;
+				}
+				.resume-page .snapshot-grid {
+					grid-template-columns: 1fr;
+				}
+				.resume-page .career-map {
+					grid-template-columns: 1fr;
+				}
+				.resume-page .map-track {
+					padding-left: 10px;
+				}
 
 				/* Section */
 				.resume-page .section {
@@ -779,10 +987,8 @@
 					margin-bottom: 24px;
 				}
 				.resume-page .section-number {
-					width: 32px;
-					height: 32px;
 					font-size: 13px;
-					margin-right: 12px;
+					margin-right: 0;
 				}
 				.resume-page .section-title {
 					font-size: 17px;
@@ -790,7 +996,7 @@
 
 				/* Experience */
 				.resume-page .experience-item {
-					padding: 18px;
+					padding: 0;
 					gap: 12px;
 					margin-bottom: 20px;
 				}
@@ -814,7 +1020,7 @@
 
 				/* Project */
 				.resume-page .project-item {
-					padding: 18px;
+					padding: 0 0 0 14px;
 				}
 				.resume-page .project-header {
 					flex-direction: column;
@@ -833,7 +1039,8 @@
 				/* Education */
 				.resume-page .education-item {
 					gap: 16px;
-					padding: 18px;
+					padding: 0;
+					grid-template-columns: 1fr;
 				}
 				.resume-page .education-icon {
 					width: 48px;
@@ -857,6 +1064,7 @@
 					padding: 18px;
 				}
 			}
+
 		</style>
 	</head>
 	<body>
@@ -867,10 +1075,10 @@
 					<div class="header-left">
 						<h1 class="name">전민지</h1>
 						<div class="title">Product-Focused Frontend Engineer</div>
-						<div class="years-indicator">
-							<div class="years-dot"></div>
-							<span class="years-text">3+ Years Experience</span>
-						</div>
+							<div class="years-indicator">
+								<div class="years-dot"></div>
+								<span class="years-text">4 Years Experience</span>
+							</div>
 					</div>
 
 					<div class="header-right">
@@ -941,28 +1149,93 @@
 							</div>
 						</div>
 					</div>
+					<div class="profile-frame" aria-label="전민지 프로필 사진">
+						<img
+							class="profile-photo"
+							src="/images/resume-profile.jpg"
+							alt="전민지 프로필 사진"
+						/>
+					</div>
 				</header>
 
 				<!-- Main Content -->
 				<main class="content">
 					<!-- About & Values -->
 					<section class="about-section">
+						<div class="about-kicker">나의 이야기</div>
 						<p class="about-text">
-							사용자 가치와 비즈니스 목표를 연결하며,<br />빠른 실험과 개선을
-							통해 유저경험을 발전시키는 프론트엔드 엔지니어입니다.
+							문제의 맥락을 이해하고, 실행 가능한 방향으로 정리해 끝까지 결과를 만드는 프론트엔드 엔지니어입니다.
 						</p>
 						<p class="about-body">
-							예약·주문·결제·운영 시스템 등 실제 서비스 전반을 구축하고
-							운영했으며,<br />사용자 행동 데이터 기반으로 문제를 분석하고
-							개선해왔습니다. <br />기술 구현을 넘어 사용자 흐름과 운영 효율,
-							비즈니스 임팩트를 함께 고민합니다.
+							여러 분야를 거치며 적성을 찾던 중, 취미로 시작한 개발에서 처음으로 깊게 몰입하는 경험을 했습니다. 해결되지 않은 문제가 계속 떠오르고 시간 가는 줄 모르고 파고드는 과정이 좋았습니다. 그 경험을 계기로 개발자로 전향했고, 지금은 제품의 문제를 코드로 해결하는 일을 커리어의 중심에 두고 있습니다.
 						</p>
+						<p class="about-body">
+							업무에 임할 때는 왜 이 기능이 필요한지, 실제로 어떤 문제를 해결하려는 것인지 먼저 이해하려고 합니다. 그 맥락을 알아야 더 나은 제품을 만들 수 있다고 생각하기 때문입니다. 그래서 기획, 디자인, 운영의 이야기에 적극적으로 참여하며 도메인 지식을 쌓아왔고, 필요하다면 개발 영역을 넘어 문제를 제기하고 해결 방향을 제안해왔습니다. 동료들로부터는 도메인 이해도가 높고 기획적인 제안을 많이 하는 개발자라는 평가를 받아왔습니다.
+						</p>
+						<p class="about-body">
+							저의 강점은 불확실한 상황에서도 해야 할 일을 정리하고 끝까지 결과를 만들어내는 실행력입니다. 완벽한 요구사항을 기다리기보다 현재 알 수 있는 것과 확인이 필요한 것을 구분하고, 비즈니스에 중요한 문제부터 우선순위를 세워 제품을 만들어왔습니다. 새로운 기술이나 익숙하지 않은 문제를 만나더라도 빠르게 학습하며 해결책을 찾는 편입니다.
+						</p>
+						<p class="about-body">
+							빠른 개발을 중요하게 생각하지만, 속도만 추구하지 않습니다. 출시 이후에도 성능, 코드 구조, 사용자 경험의 작은 문제를 꾸준히 개선하며 제품이 시간이 지날수록 더 단단해지도록 만듭니다. 기능을 구현하는 개발자를 넘어, 사용자와 비즈니스의 문제를 함께 고민하고 실제 결과로 연결하는 개발자로 일해왔으며 앞으로도 그 역할을 이어가고자 합니다.
+						</p>
+					</section>
+
+					<section class="section overview-section">
+						<div class="section-header">
+							<div class="section-number">01</div>
+							<h2 class="section-title">커리어 한눈에 보기</h2>
+						</div>
+						<div class="snapshot-grid" aria-label="업무 이력 요약">
+							<div class="snapshot-card">
+								<span class="snapshot-label">Domain</span>
+								<div class="snapshot-value">커머스 · 콘텐츠 · O2O 운영</div>
+								<div class="snapshot-note">마켓플레이스와 탐색 경험 중심</div>
+							</div>
+							<div class="snapshot-card">
+								<span class="snapshot-label">Product</span>
+								<div class="snapshot-value">저작도구 · 예약/결제 · 관리앱</div>
+								<div class="snapshot-note">사용자/운영자 플로우 모두 경험</div>
+							</div>
+							<div class="snapshot-card">
+								<span class="snapshot-label">Strength</span>
+								<div class="snapshot-value">문제정의 · 도메인 이해 · 기획제안</div>
+								<div class="snapshot-note">기능보다 해결할 문제를 먼저 봅니다</div>
+							</div>
+							<div class="snapshot-card">
+								<span class="snapshot-label">Impact</span>
+								<div class="snapshot-value">성능개선 · 데이터 실험 · 자동화</div>
+								<div class="snapshot-note">Mixpanel, GTM, A/B Testing</div>
+							</div>
+						</div>
+						<div class="career-map" aria-label="업무 이력 차트">
+							<div class="map-period">2019.09 - 2022.03</div>
+							<div class="map-track">
+								<div class="map-title">금융 서비스 운영 · 고객 상담</div>
+								<div class="map-detail">
+									은행원으로 실제 고객 문제와 운영 프로세스를 다루며 비즈니스 감각을 축적
+								</div>
+							</div>
+							<div class="map-period">2022.11 - 2024.12</div>
+							<div class="map-track">
+								<div class="map-title">B2C 교재 마켓플레이스 · 콘텐츠 제작 도구</div>
+								<div class="map-detail">
+									쏠북 커머스, Next.js 마이그레이션, WYSIWYG Editor POC, 운영 대시보드 개발
+								</div>
+							</div>
+							<div class="map-period">2025.01 - Present</div>
+							<div class="map-track">
+								<div class="map-title">O2O 커머스 · 팝업스토어 탐색/예약 · 매장 운영 앱</div>
+								<div class="map-detail">
+									팝가 실험 배포, 번들 최적화, GTM 자동화, WebView 기반 주문/결제/관리 플로우 개발
+								</div>
+							</div>
+						</div>
 					</section>
 
 					<!-- Experience -->
 					<section class="section">
 						<div class="section-header">
-							<div class="section-number">01</div>
+							<div class="section-number">02</div>
 							<h2 class="section-title">Experience</h2>
 						</div>
 
@@ -972,9 +1245,9 @@
 								<div class="experience-duration">1 year+</div>
 							</div>
 							<div class="experience-content">
-								<div class="experience-company">Sweetspot · 플랫폼 본부</div>
+								<div class="experience-company">스위트스팟 · 플랫폼 본부</div>
 								<p class="experience-description">
-									O2O 커머스 플랫폼 및 팝업스토어 정보/예약 시스템 개발
+									O2O 커머스 플랫폼 및 팝업스토어 콘텐츠 탐색 경험·예약 시스템 개발
 								</p>
 								<ul class="experience-list">
 									<li>
@@ -982,11 +1255,11 @@
 										성능 개선·PC 반응형 확장·유저 플로우 개선
 									</li>
 									<li>
-										F&B 매장 <strong>예약·주문·결제 플랫폼(샵앳피소드)</strong>
-										프론트엔드 개발
+										F&amp;B 매장 <strong>예약·주문·결제 플랫폼(샵앳피소드)</strong>
+										WebView 프론트엔드 개발
 									</li>
 									<li>
-										React Native 기반
+										React Native WebView 기반
 										<strong>매장 관리·사이렌오더 앱(샵앳피소드 매니저)</strong> 개발
 									</li>
 								</ul>
@@ -1003,22 +1276,22 @@
 									북아이피스 · 마켓플레이스 스쿼드
 								</div>
 								<p class="experience-description">
-									초중고 교재 저작권 중계 및 저자가 직접 제작·판매하는 B2C
-									마켓플레이스 개발
+									콘텐츠 제작자와 구매자를 연결하는 B2C 교재 마켓플레이스 및
+									저작 도구 개발
 								</p>
 								<ul class="experience-list">
-									<li><strong>커머스 프로덕트(쏠북)</strong> Next.js 마이그레이션</li>
+									<li>
+										<strong>커머스 프로덕트(쏠북)</strong> Next.js 마이그레이션 및
+										SSR 기반 SEO 개선
+									</li>
 									<li>
 										검색·카테고리·결제·쿠폰 등 <strong>커머스 핵심 기능 개발</strong>
-										및 데이터 기반 UI 개선 사이클 진행
+										및 Mixpanel 기반 데이터 개선 사이클 진행
 									</li>
 									<li>
-										WYSIWYG 에디터(<strong>쏠북 스튜디오</strong>)·대시보드(<strong
-											>쏠북 대시보드</strong
-										>) 등 신규 프로덕트 개발
-									</li>
-									<li>
-										<strong>디자인 시스템(SDS)</strong> 개발 — npm 배포로 사내 <strong>3개 스쿼드</strong>에서 공통으로 사용 중
+										저자가 직접 콘텐츠를 제작·판매할 수 있는
+										<strong>WYSIWYG 에디터(쏠북 스튜디오)</strong>와
+										운영용 <strong>대시보드</strong> 신규 개발
 									</li>
 								</ul>
 							</div>
@@ -1041,10 +1314,35 @@
 					<!-- Projects -->
 					<section class="section section--projects">
 						<div class="section-header">
-							<div class="section-number">02</div>
+							<div class="section-number">03</div>
 							<h2 class="section-title">Key Projects</h2>
 						</div>
 
+						<div class="project-item">
+							<div class="project-header">
+								<h3 class="project-title">
+									쏠북 스튜디오 - WYSIWYG Editor POC
+								</h3>
+								<span class="project-period">2023</span>
+							</div>
+							<div class="project-tech">
+								<span class="tech-chip">React</span>
+								<span class="tech-chip">TypeScript</span>
+								<span class="tech-chip">HTML to PDF</span>
+								<span class="tech-chip">Editor Library</span>
+							</div>
+							<ul class="project-description">
+								<li>
+									저자가 문제집 콘텐츠를 직접 편집·출력·PDF 판매할 수 있도록
+									<strong>WYSIWYG Editor library를 커스텀한 POC</strong> 설계·구현
+								</li>
+								<li>
+									<strong>4주 만에</strong> 편집부터 출력까지 핵심 플로우를 완성해
+									콘텐츠 제작 가능성을 검증하고,
+									<strong>시리즈A 투자유치</strong>에 기여
+								</li>
+							</ul>
+						</div>
 						<div class="project-item">
 							<div class="project-header">
 								<h3 class="project-title">팝가 - 팝업스토어 플랫폼</h3>
@@ -1053,68 +1351,28 @@
 							<div class="project-tech">
 								<span class="tech-chip">Next.js</span>
 								<span class="tech-chip">TanStack Query</span>
-								<span class="tech-chip">Naver Maps API</span>
+								<span class="tech-chip">TypeScript</span>
 								<span class="tech-chip">GTM</span>
 							</div>
 							<ul class="project-description">
 								<li>
-									Firebase A/B Testing 기반 실험 운영 및 데이터 분석으로 3개월간 <strong>20번의 기능 배포</strong> 진행
+									<strong>Figma MCP + Claude Skill</strong> 활용으로 반복 마크업
+									작업을 줄여 UI 개발 사이클 단축
+								</li>
+								<li>
+									Firebase A/B Testing 기반 실험 운영 및 데이터 분석으로
+									3개월간 <strong>20번의 기능 배포</strong> 진행
+								</li>
+								<li>
+									번들 분석 기반 Dynamic Import 적용으로
+									<strong>팝업 상세 페이지 번들 121KB → 38.5KB (68% 감소)</strong>
+								</li>
+								<li>
+									속도와 품질을 모두 잡기 위해 Google Apps Script로 <strong>GTM 이벤트 자동 배포 파이프라인</strong> 구축 - dev/prd 배포시 휴먼 에러 제거
 								</li>
 								<li>
 									<strong>대규모 트래픽을 고려한 사전예약 시스템</strong> 기획·개발
 								</li>
-								<li>
-									번들 분석 기반 Dynamic Import·이미지 최적화로
-									<strong>팝업 상세 페이지 번들 121KB → 38.5KB (68% 감소)</strong>
-								</li>
-								<li>네이버 지도 API 활용 지도 기능 및 개인화 추천 기능 개발</li>
-								<li>
-										Google Apps Script로 <strong>GTM 이벤트 자동 배포 파이프라인</strong> 구축 - dev/prd 배포시 휴먼 에러 제거
-									</li>
-									<li>
-										<strong>Figma MCP + Claude Skill</strong> 활용 UI 개발 효율화
-									</li>
-							</ul>
-						</div>
-						<div class="project-item">
-							<div class="project-header">
-								<h3 class="project-title">샵앳피소드 매니저 - 매장 관리 앱</h3>
-								<span class="project-period">2025.01 - 2025.06</span>
-							</div>
-							<div class="project-tech">
-								<span class="tech-chip">React Native</span>
-								<span class="tech-chip">WebView</span>
-								<span class="tech-chip">Bluetooth</span>
-								<span class="tech-chip">Thermal Printer</span>
-								<span class="tech-chip">PostMessage</span>
-							</div>
-							<ul class="project-description">
-								<li>F&B 매장에서 실시간 주문·상품 관리가 가능한 매장 관리 앱 개발</li>
-								<li>블루투스 연동으로 영수증 프린터(thermal printer) 기능 구현</li>
-								<li>
-									SSE/polling 대신 <strong>PostMessage 활용</strong>해 WebView ↔
-									네이티브 통신 최적화
-								</li>
-							</ul>
-						</div>
-						<div class="project-item">
-							<div class="project-header">
-								<h3 class="project-title">샵앳피소드 - F&B 사이렌오더</h3>
-								<span class="project-period">2025.01 - 2025.06</span>
-							</div>
-							<div class="project-tech">
-								<span class="tech-chip">React Native</span>
-								<span class="tech-chip">WebView</span>
-								<span class="tech-chip">canvas</span>
-								<span class="tech-chip">Push Notification</span>
-							</div>
-							<ul class="project-description">
-								<li>실시간으로 주문·결제하는 사이렌 오더 시스템 구축</li>
-								<li>
-									Firebase messaging을 활용한 실시간 주문 푸시알림, canvas 기반
-									영수증 이미지 저장 기능 구현
-								</li>
-								<li>구매 시간 단축을 위한 주문 퍼널 개선</li>
 							</ul>
 						</div>
 						<div class="project-item">
@@ -1130,41 +1388,16 @@
 							</div>
 							<ul class="project-description">
 								<li>
-									레거시 코드를 <strong>Next.js로 마이그레이션</strong> 및 SSR
-									기반 SEO 개선
+									레거시 코드를 <strong>Next.js로 마이그레이션</strong>하고 SSR 기반
+									렌더링 구조를 적용해 SEO와 초기 진입 성능 개선
 								</li>
 								<li>
-									클라이언트/서버 상태 분리를 위해 <strong>TanStack Query 도입</strong> - 불필요한 요청 최소화
+									클라이언트/서버 상태 분리를 위해 <strong>TanStack Query 도입</strong>
+									- 불필요한 요청 최소화
 								</li>
 								<li>
-									공유 가능한 필터 상태를 위해 URLSearchParam 기반 필터 훅 개발, requestAnimationFrame 활용 무한 스크롤 최적화로 검색 UX 개선
-								</li>
-							</ul>
-						</div>
-						<div class="project-item">
-							<div class="project-header">
-								<h3 class="project-title">
-									쏠북 스튜디오 - WYSIWYG Editor POC
-								</h3>
-								<span class="project-period">2023</span>
-							</div>
-							<div class="project-tech">
-								<span class="tech-chip">React</span>
-								<span class="tech-chip">HTML to PDF</span>
-								<span class="tech-chip">Editor Library</span>
-							</div>
-							<ul class="project-description">
-								<li>
-									WYSIWYG Editor library를 커스텀 하여 저자들이 문제집을 직접
-									만들고 출력/PDF 판매가 가능한 에디터 POC 제작
-								</li>
-								<li>
-									<strong>4주 만에</strong> 편집부터 출력까지 필수기능 구현,
-									<strong>시리즈A 투자유치 기여</strong>
-								</li>
-								<li>
-									Chromium 기반 서버사이드 HTML to PDF 변환으로 스타일링 한계
-									극복
+									공유 가능한 필터 상태를 위해 URLSearchParams 기반 필터 훅 개발,
+									requestAnimationFrame 활용 무한 스크롤 최적화로 검색 UX 개선
 								</li>
 							</ul>
 						</div>
@@ -1184,71 +1417,45 @@
 							<ul class="project-description">
 								<li>Mixpanel 구매 퍼널 구축으로 데이터 기반 의사결정 지원</li>
 								<li>
-									믹스패널 데이터 기반 홈 개편 후 <strong
-										>구매 전환율 40% → 60%</strong
-									> 향상
+									이벤트 설계와 여러 차례의 홈 개편을 함께 진행해 <strong>구매 전환율 40% → 60%</strong>
+									향상
 								</li>
 							</ul>
 						</div>
-					</section>
-
-					<!-- Skills -->
-					<section class="section">
-						<div class="section-header">
-							<div class="section-number">03</div>
-							<h2 class="section-title">Skills</h2>
+						<div class="project-item">
+							<div class="project-header">
+								<h3 class="project-title">샵앳피소드 매니저 - 매장 관리 앱</h3>
+								<span class="project-period">2025.01 - 2025.06</span>
+							</div>
+							<div class="project-tech">
+								<span class="tech-chip">React Native</span>
+								<span class="tech-chip">WebView</span>
+								<span class="tech-chip">Bluetooth</span>
+								<span class="tech-chip">Thermal Printer</span>
+								<span class="tech-chip">PostMessage</span>
+							</div>
+							<ul class="project-description">
+								<li>F&amp;B 매장 실시간 주문·상품 관리를 위한 <strong>Android/iOS 멀티 플랫폼 WebView</strong> 기반 매장 관리 앱 개발</li>
+								<li><strong>WebView ↔ 네이티브 PostMessage 인터페이스 설계</strong> — SSE/polling 대비 실시간 주문 처리 지연 개선</li>
+								<li>블루투스 열전사 프린터(thermal printer) 연동 — 플랫폼별 권한·연결 처리 포함</li>
+							</ul>
 						</div>
-
-						<div class="skills-container">
-							<div class="skill-card">
-								<h3 class="skill-card-title">Frontend Core</h3>
-								<div class="skill-tags">
-									<span class="skill-tag">React</span>
-									<span class="skill-tag">Next.js</span>
-									<span class="skill-tag">React Native</span>
-									<span class="skill-tag">TypeScript</span>
-									<span class="skill-tag">JavaScript</span>
-								</div>
+						<div class="project-item">
+							<div class="project-header">
+								<h3 class="project-title">샵앳피소드 - F&B 사이렌오더</h3>
+								<span class="project-period">2025.01 - 2025.06</span>
 							</div>
-
-							<div class="skill-card">
-								<h3 class="skill-card-title">상태관리 & 데이터</h3>
-								<div class="skill-tags">
-									<span class="skill-tag">Zustand</span>
-									<span class="skill-tag">TanStack Query</span>
-									<span class="skill-tag">Redux</span>
-									<span class="skill-tag">MobX</span>
-								</div>
+							<div class="project-tech">
+								<span class="tech-chip">React Native</span>
+								<span class="tech-chip">WebView</span>
+								<span class="tech-chip">canvas</span>
+								<span class="tech-chip">Push Notification</span>
 							</div>
-
-							<div class="skill-card">
-								<h3 class="skill-card-title">스타일링 & UI</h3>
-								<div class="skill-tags">
-									<span class="skill-tag">Styled-components</span>
-									<span class="skill-tag">Emotion</span>
-									<span class="skill-tag">Tailwind CSS</span>
-									<span class="skill-tag">MUI</span>
-									<span class="skill-tag">Storybook</span>
-								</div>
-							</div>
-							<div class="skill-card">
-								<h3 class="skill-card-title">모바일 & 앱</h3>
-								<div class="skill-tags">
-									<span class="skill-tag">React Native</span>
-									<span class="skill-tag">Expo</span>
-									<span class="skill-tag">WebView</span>
-									<span class="skill-tag">Firebase Notification</span>
-								</div>
-							</div>
-							<div class="skill-card">
-								<h3 class="skill-card-title">분석 & 모니터링</h3>
-								<div class="skill-tags">
-									<span class="skill-tag">Sentry</span>
-									<span class="skill-tag">GTM</span>
-									<span class="skill-tag">Google Analytics</span>
-									<span class="skill-tag">Mixpanel</span>
-								</div>
-							</div>
+							<ul class="project-description">
+								<li><strong>iOS/Android WebView 환경</strong>에서 실시간 주문·결제 사이렌오더 플로우 구축</li>
+								<li>Push Notification 연동으로 실시간 주문 알림 구현</li>
+								<li>canvas 기반 UI 커스텀 렌더링 처리</li>
+							</ul>
 						</div>
 					</section>
 

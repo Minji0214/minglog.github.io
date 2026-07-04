@@ -293,6 +293,7 @@ function formatDate(date: Date): string {
 			.blog-post-content {
 				flex: 1;
 				min-width: 0;
+				overflow-x: hidden;
 			}
 
 			.blog-post-body {
@@ -424,6 +425,8 @@ function formatDate(date: Date): string {
 				color: #333333;
 				border-radius: 8px;
 				overflow-x: auto;
+				max-width: 100%;
+				box-sizing: border-box;
 				margin: 32px 0;
 				border: 1px solid #e5e5e5;
 				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -438,6 +441,19 @@ function formatDate(date: Date): string {
 			.blog-post-body pre[class*="github-dark"],
 			.blog-post-body pre[class*="github-light"] {
 				padding: 20px;
+				max-width: 100% !important;
+				overflow-x: auto !important;
+				box-sizing: border-box !important;
+				white-space: pre;
+				word-break: normal;
+				overflow-wrap: normal;
+			}
+
+			/* code 내부 요소가 pre 스크롤 영역 안에서 자연스럽게 늘어나도록 */
+			.blog-post-body pre.astro-code code,
+			.blog-post-body pre[class*="astro-code"] code {
+				display: inline-block;
+				min-width: 100%;
 			}
 
 			.blog-post-body pre code {
@@ -673,6 +689,9 @@ function formatDate(date: Date): string {
 					padding-bottom: 32px;
 				}
 
+				.blog-post-sidebar {
+					display: none;
+				}
 
 				.blog-post-body {
 					max-width: 100%;
