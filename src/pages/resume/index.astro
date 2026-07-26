@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="robots" content="noindex, nofollow" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>전민지 - Product-Focused Frontend Engineer</title>
+		<title>전민지 - Frontend Engineer</title>
 		<style is:global>
 			@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 			@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap");
@@ -93,13 +93,8 @@
 					padding: 8px;
 				}
 
-				.resume-page .career-map {
-					padding: 10px;
-				}
-
 				.resume-page .experience-item,
-				.resume-page .project-item,
-				.resume-page .career-map {
+				.resume-page .project-item {
 					break-inside: avoid;
 					page-break-inside: avoid;
 				}
@@ -374,61 +369,15 @@
 				line-height: 1.45;
 				font-weight: 700;
 				color: var(--ink);
-				white-space: nowrap;
+				white-space: normal;
 				word-break: keep-all;
-				overflow-wrap: normal;
+				overflow-wrap: anywhere;
 			}
 
 			.resume-page .snapshot-note {
 				margin-top: 4px;
 				font-size: 10.5px;
 				line-height: 1.4;
-				color: var(--medium-gray);
-			}
-
-			.resume-page .career-map {
-				display: grid;
-				grid-template-columns: 118px 1fr;
-				gap: 8px 12px;
-				padding: 12px;
-				border: 1px solid var(--light-gray);
-				background: #fbfbfb;
-			}
-
-			.resume-page .map-period {
-				font-size: 11px;
-				font-weight: 700;
-				color: var(--charcoal);
-				padding-top: 2px;
-			}
-
-			.resume-page .map-track {
-				position: relative;
-				min-height: 34px;
-				padding-left: 12px;
-			}
-
-			.resume-page .map-track::before {
-				content: "";
-				position: absolute;
-				left: 0;
-				top: 4px;
-				bottom: 4px;
-				width: 3px;
-				background: var(--accent);
-			}
-
-			.resume-page .map-title {
-				font-size: 12.5px;
-				font-weight: 800;
-				color: var(--ink);
-				line-height: 1.35;
-			}
-
-			.resume-page .map-detail {
-				margin-top: 2px;
-				font-size: 11.5px;
-				line-height: 1.45;
 				color: var(--medium-gray);
 			}
 
@@ -881,8 +830,7 @@
 					height: 76px;
 				}
 
-				.resume-page .snapshot-grid,
-				.resume-page .career-map {
+				.resume-page .snapshot-grid {
 					grid-template-columns: 1fr;
 				}
 			}
@@ -971,12 +919,6 @@
 				}
 				.resume-page .snapshot-grid {
 					grid-template-columns: 1fr;
-				}
-				.resume-page .career-map {
-					grid-template-columns: 1fr;
-				}
-				.resume-page .map-track {
-					padding-left: 10px;
 				}
 
 				/* Section */
@@ -1074,11 +1016,11 @@
 				<header class="header">
 					<div class="header-left">
 						<h1 class="name">전민지</h1>
-						<div class="title">Product-Focused Frontend Engineer</div>
-							<div class="years-indicator">
-								<div class="years-dot"></div>
-								<span class="years-text">4 Years Experience</span>
-							</div>
+						<div class="title">Frontend Engineer · Product Engineering</div>
+						<div class="years-indicator">
+							<div class="years-dot"></div>
+							<span class="years-text">4 Years Experience</span>
+						</div>
 					</div>
 
 					<div class="header-right">
@@ -1162,72 +1104,42 @@
 				<main class="content">
 					<!-- About & Values -->
 					<section class="about-section">
-						<div class="about-kicker">나의 이야기</div>
 						<p class="about-text">
-							문제의 맥락을 이해하고, 실행 가능한 방향으로 정리해 끝까지 결과를 만드는 프론트엔드 엔지니어입니다.
+							구매·예약·주문·결제처럼 비즈니스 지표와 맞닿은 핵심 플로우를 개선해온 프론트엔드 엔지니어입니다.
 						</p>
 						<p class="about-body">
-							여러 분야를 거치며 적성을 찾던 중, 취미로 시작한 개발에서 처음으로 깊게 몰입하는 경험을 했습니다. 해결되지 않은 문제가 계속 떠오르고 시간 가는 줄 모르고 파고드는 과정이 좋았습니다. 그 경험을 계기로 개발자로 전향했고, 지금은 제품의 문제를 코드로 해결하는 일을 커리어의 중심에 두고 있습니다.
+							팝업스토어 플랫폼에서는 Figma MCP 기반 개발 환경과 GTM 이벤트 자동화를 구축해 빠른 실험 배포 구조를 만들었습니다. 3개월간 20회 기능 배포, 상세 페이지 번들 68% 감소, 데이터 기반 탐색·예약 플로우 개선 제안을 경험했습니다.
 						</p>
 						<p class="about-body">
-							업무에 임할 때는 왜 이 기능이 필요한지, 실제로 어떤 문제를 해결하려는 것인지 먼저 이해하려고 합니다. 그 맥락을 알아야 더 나은 제품을 만들 수 있다고 생각하기 때문입니다. 그래서 기획, 디자인, 운영의 이야기에 적극적으로 참여하며 도메인 지식을 쌓아왔고, 필요하다면 개발 영역을 넘어 문제를 제기하고 해결 방향을 제안해왔습니다. 동료들로부터는 도메인 이해도가 높고 기획적인 제안을 많이 하는 개발자라는 평가를 받아왔습니다.
-						</p>
-						<p class="about-body">
-							저의 강점은 불확실한 상황에서도 해야 할 일을 정리하고 끝까지 결과를 만들어내는 실행력입니다. 완벽한 요구사항을 기다리기보다 현재 알 수 있는 것과 확인이 필요한 것을 구분하고, 비즈니스에 중요한 문제부터 우선순위를 세워 제품을 만들어왔습니다. 새로운 기술이나 익숙하지 않은 문제를 만나더라도 빠르게 학습하며 해결책을 찾는 편입니다.
-						</p>
-						<p class="about-body">
-							빠른 개발을 중요하게 생각하지만, 속도만 추구하지 않습니다. 출시 이후에도 성능, 코드 구조, 사용자 경험의 작은 문제를 꾸준히 개선하며 제품이 시간이 지날수록 더 단단해지도록 만듭니다. 기능을 구현하는 개발자를 넘어, 사용자와 비즈니스의 문제를 함께 고민하고 실제 결과로 연결하는 개발자로 일해왔으며 앞으로도 그 역할을 이어가고자 합니다.
+							쏠북에서는 React 커머스 서비스를 Next.js로 마이그레이션하고 구매 퍼널 이벤트를 설계해 전환율 40% → 60% 향상에 기여했습니다. 최근에는 WebView 기반 주문·결제·매장 관리 앱의 네이티브 브릿지와 운영 안정성까지 다루고 있습니다.
 						</p>
 					</section>
 
 					<section class="section overview-section">
 						<div class="section-header">
 							<div class="section-number">01</div>
-							<h2 class="section-title">커리어 한눈에 보기</h2>
+							<h2 class="section-title">Highlights</h2>
 						</div>
-						<div class="snapshot-grid" aria-label="업무 이력 요약">
+						<div class="snapshot-grid" aria-label="핵심 역량 요약">
 							<div class="snapshot-card">
-								<span class="snapshot-label">Domain</span>
-								<div class="snapshot-value">커머스 · 콘텐츠 · O2O 운영</div>
-								<div class="snapshot-note">마켓플레이스와 탐색 경험 중심</div>
+								<span class="snapshot-label">Flow</span>
+								<div class="snapshot-value">구매 · 예약 · 주문 · 결제</div>
+								<div class="snapshot-note">지표와 연결되는 핵심 플로우</div>
 							</div>
 							<div class="snapshot-card">
-								<span class="snapshot-label">Product</span>
-								<div class="snapshot-value">저작도구 · 예약/결제 · 관리앱</div>
-								<div class="snapshot-note">사용자/운영자 플로우 모두 경험</div>
+								<span class="snapshot-label">Build</span>
+								<div class="snapshot-value">실험배포 · GTM 자동화</div>
+								<div class="snapshot-note">빠른 검증을 위한 개발 환경</div>
 							</div>
 							<div class="snapshot-card">
-								<span class="snapshot-label">Strength</span>
-								<div class="snapshot-value">문제정의 · 도메인 이해 · 기획제안</div>
-								<div class="snapshot-note">기능보다 해결할 문제를 먼저 봅니다</div>
+								<span class="snapshot-label">Engineering</span>
+								<div class="snapshot-value">Next.js · WebView</div>
+								<div class="snapshot-note">SSR, 상태관리, 앱 통신</div>
 							</div>
 							<div class="snapshot-card">
 								<span class="snapshot-label">Impact</span>
-								<div class="snapshot-value">성능개선 · 데이터 실험 · 자동화</div>
-								<div class="snapshot-note">Mixpanel, GTM, A/B Testing</div>
-							</div>
-						</div>
-						<div class="career-map" aria-label="업무 이력 차트">
-							<div class="map-period">2019.09 - 2022.03</div>
-							<div class="map-track">
-								<div class="map-title">금융 서비스 운영 · 고객 상담</div>
-								<div class="map-detail">
-									은행원으로 실제 고객 문제와 운영 프로세스를 다루며 비즈니스 감각을 축적
-								</div>
-							</div>
-							<div class="map-period">2022.11 - 2024.12</div>
-							<div class="map-track">
-								<div class="map-title">B2C 교재 마켓플레이스 · 콘텐츠 제작 도구</div>
-								<div class="map-detail">
-									쏠북 커머스, Next.js 마이그레이션, WYSIWYG Editor POC, 운영 대시보드 개발
-								</div>
-							</div>
-							<div class="map-period">2025.01 - Present</div>
-							<div class="map-track">
-								<div class="map-title">O2O 커머스 · 팝업스토어 탐색/예약 · 매장 운영 앱</div>
-								<div class="map-detail">
-									팝가 실험 배포, 번들 최적화, GTM 자동화, WebView 기반 주문/결제/관리 플로우 개발
-								</div>
+								<div class="snapshot-value">20회 배포 · 번들 -68%</div>
+								<div class="snapshot-note">전환율 +20%p, 개선 제안</div>
 							</div>
 						</div>
 					</section>
@@ -1242,26 +1154,18 @@
 						<div class="experience-item">
 							<div class="experience-period">
 								<div class="experience-date">2025.01 - Present</div>
-								<div class="experience-duration">1 year+</div>
+								<div class="experience-duration">1 year 7 months</div>
 							</div>
 							<div class="experience-content">
-								<div class="experience-company">스위트스팟 · 플랫폼 본부</div>
+								<div class="experience-company">스위트스팟 · Frontend Engineer</div>
 								<p class="experience-description">
-									O2O 커머스 플랫폼 및 팝업스토어 콘텐츠 탐색 경험·예약 시스템 개발
+									O2O 커머스와 매장 운영 도구의 프론트엔드를 담당하며 사용자 탐색/예약, WebView 주문·결제, 매장 관리 플로우를 개발했습니다.
 								</p>
 								<ul class="experience-list">
-									<li>
-										<strong>팝업스토어 정보 플랫폼(팝가)</strong> — 실험 조직으로
-										성능 개선·PC 반응형 확장·유저 플로우 개선
-									</li>
-									<li>
-										F&amp;B 매장 <strong>예약·주문·결제 플랫폼(샵앳피소드)</strong>
-										WebView 프론트엔드 개발
-									</li>
-									<li>
-										React Native WebView 기반
-										<strong>매장 관리·사이렌오더 앱(샵앳피소드 매니저)</strong> 개발
-									</li>
+									<li>팝업스토어 플랫폼에서 빠른 실험 배포를 위해 Figma MCP 기반 개발 환경과 GTM 이벤트 자동화 구조 구축</li>
+									<li>사용자 행동 데이터를 보고 예약·탐색 플로우의 병목을 파악해 기획 아이디어를 제안하고 실험으로 연결</li>
+									<li>WebView 기반 주문/결제/관리 앱에서 네이티브 브릿지, 권한 처리, 실시간 주문 흐름 구현</li>
+									<li>운영 환경의 예외 케이스를 고려해 예약·주문·출력 플로우의 안정성 개선</li>
 								</ul>
 							</div>
 						</div>
@@ -1272,41 +1176,15 @@
 								<div class="experience-duration">2 years 2 months</div>
 							</div>
 							<div class="experience-content">
-								<div class="experience-company">
-									북아이피스 · 마켓플레이스 스쿼드
-								</div>
+								<div class="experience-company">북아이피스 · Frontend Engineer</div>
 								<p class="experience-description">
-									콘텐츠 제작자와 구매자를 연결하는 B2C 교재 마켓플레이스 및
-									저작 도구 개발
+									콘텐츠 제작자와 구매자를 연결하는 B2C 교재 마켓플레이스와 저작·운영 도구를 개발했습니다.
 								</p>
 								<ul class="experience-list">
-									<li>
-										<strong>커머스 프로덕트(쏠북)</strong> Next.js 마이그레이션 및
-										SSR 기반 SEO 개선
-									</li>
-									<li>
-										검색·카테고리·결제·쿠폰 등 <strong>커머스 핵심 기능 개발</strong>
-										및 Mixpanel 기반 데이터 개선 사이클 진행
-									</li>
-									<li>
-										저자가 직접 콘텐츠를 제작·판매할 수 있는
-										<strong>WYSIWYG 에디터(쏠북 스튜디오)</strong>와
-										운영용 <strong>대시보드</strong> 신규 개발
-									</li>
+									<li>React 커머스 서비스를 Next.js로 마이그레이션하고 SSR 기반 렌더링 구조로 전환</li>
+									<li>검색·카테고리·결제·쿠폰 등 커머스 핵심 플로우를 개발하고 Mixpanel 기반 개선 사이클 운영</li>
+									<li>저자가 직접 콘텐츠를 제작·판매할 수 있는 WYSIWYG 에디터 POC와 운영 대시보드 개발</li>
 								</ul>
-							</div>
-						</div>
-
-						<div class="experience-item">
-							<div class="experience-period">
-								<div class="experience-date">2019.09 - 2022.03</div>
-								<div class="experience-duration">2 years 7 months</div>
-							</div>
-							<div class="experience-content">
-								<div class="experience-company">천안북부신협 · 은행원</div>
-								<p class="experience-description">
-									금융 서비스 운영 및 고객 상담
-								</p>
 							</div>
 						</div>
 					</section>
@@ -1315,34 +1193,9 @@
 					<section class="section section--projects">
 						<div class="section-header">
 							<div class="section-number">03</div>
-							<h2 class="section-title">Key Projects</h2>
+							<h2 class="section-title">Selected Projects</h2>
 						</div>
 
-						<div class="project-item">
-							<div class="project-header">
-								<h3 class="project-title">
-									쏠북 스튜디오 - WYSIWYG Editor POC
-								</h3>
-								<span class="project-period">2023</span>
-							</div>
-							<div class="project-tech">
-								<span class="tech-chip">React</span>
-								<span class="tech-chip">TypeScript</span>
-								<span class="tech-chip">HTML to PDF</span>
-								<span class="tech-chip">Editor Library</span>
-							</div>
-							<ul class="project-description">
-								<li>
-									저자가 문제집 콘텐츠를 직접 편집·출력·PDF 판매할 수 있도록
-									<strong>WYSIWYG Editor library를 커스텀한 POC</strong> 설계·구현
-								</li>
-								<li>
-									<strong>4주 만에</strong> 편집부터 출력까지 핵심 플로우를 완성해
-									콘텐츠 제작 가능성을 검증하고,
-									<strong>시리즈A 투자유치</strong>에 기여
-								</li>
-							</ul>
-						</div>
 						<div class="project-item">
 							<div class="project-header">
 								<h3 class="project-title">팝가 - 팝업스토어 플랫폼</h3>
@@ -1353,26 +1206,41 @@
 								<span class="tech-chip">TanStack Query</span>
 								<span class="tech-chip">TypeScript</span>
 								<span class="tech-chip">GTM</span>
+								<span class="tech-chip">Firebase A/B Testing</span>
+								<span class="tech-chip">Figma MCP</span>
 							</div>
 							<ul class="project-description">
 								<li>
-									<strong>Figma MCP + Claude Skill</strong> 활용으로 반복 마크업
-									작업을 줄여 UI 개발 사이클 단축
+									Figma MCP 기반 개발 환경을 구성해 디자인 반영 정확도와 반복 UI 구현 속도를 높이고, 3개월간 <strong>20번의 기능 배포</strong> 진행
 								</li>
 								<li>
-									Firebase A/B Testing 기반 실험 운영 및 데이터 분석으로
-									3개월간 <strong>20번의 기능 배포</strong> 진행
-								</li>
-								<li>
-									번들 분석 기반 Dynamic Import 적용으로
-									<strong>팝업 상세 페이지 번들 121KB → 38.5KB (68% 감소)</strong>
+									번들 분석 기반 Dynamic Import 적용으로 <strong>팝업 상세 페이지 번들 121KB → 38.5KB (68% 감소)</strong>
 								</li>
 								<li>
 									속도와 품질을 모두 잡기 위해 Google Apps Script로 <strong>GTM 이벤트 자동 배포 파이프라인</strong> 구축 - dev/prd 배포시 휴먼 에러 제거
 								</li>
 								<li>
-									<strong>대규모 트래픽을 고려한 사전예약 시스템</strong> 기획·개발
+									사용자 행동 데이터를 기반으로 탐색·예약 플로우의 개선 아이디어를 제안하고 Firebase A/B Testing 실험으로 검증
 								</li>
+							</ul>
+						</div>
+						<div class="project-item">
+							<div class="project-header">
+								<h3 class="project-title">샵앳피소드 - WebView 주문/관리 앱</h3>
+								<span class="project-period">2025.01 - 2025.06</span>
+							</div>
+							<div class="project-tech">
+								<span class="tech-chip">React Native</span>
+								<span class="tech-chip">WebView</span>
+								<span class="tech-chip">Native Bridge</span>
+								<span class="tech-chip">Push Notification</span>
+								<span class="tech-chip">Bluetooth</span>
+								<span class="tech-chip">Payment Flow</span>
+							</div>
+							<ul class="project-description">
+								<li>iOS/Android WebView 환경에서 실시간 주문·결제·매장 관리 플로우 구축</li>
+								<li><strong>WebView ↔ 네이티브 PostMessage 인터페이스</strong>를 설계해 주문 이벤트를 앱에서 웹 화면으로 전달하고 polling 주기 의존 제거</li>
+								<li>블루투스 열전사 프린터 연동과 플랫폼별 권한·연결 예외 처리를 구현해 매장 출력 플로우 안정화</li>
 							</ul>
 						</div>
 						<div class="project-item">
@@ -1383,78 +1251,32 @@
 							<div class="project-tech">
 								<span class="tech-chip">Next.js</span>
 								<span class="tech-chip">TanStack Query</span>
+								<span class="tech-chip">TypeScript</span>
 								<span class="tech-chip">SSR</span>
 								<span class="tech-chip">Mixpanel</span>
 							</div>
 							<ul class="project-description">
 								<li>
-									레거시 코드를 <strong>Next.js로 마이그레이션</strong>하고 SSR 기반
-									렌더링 구조를 적용해 SEO와 초기 진입 성능 개선
+									레거시 React 커머스 서비스를 Next.js로 마이그레이션하고 SSR 렌더링 구조를 적용해 검색 유입과 초기 진입 경험 개선
 								</li>
-								<li>
-									클라이언트/서버 상태 분리를 위해 <strong>TanStack Query 도입</strong>
-									- 불필요한 요청 최소화
-								</li>
-								<li>
-									공유 가능한 필터 상태를 위해 URLSearchParams 기반 필터 훅 개발,
-									requestAnimationFrame 활용 무한 스크롤 최적화로 검색 UX 개선
-								</li>
+								<li>검색·상품 상세·결제 화면의 서버 상태를 TanStack Query로 분리하고 cache 정책을 정리해 중복 요청과 데이터 흐름 관리</li>
+								<li>구매 퍼널 이벤트를 정의하고 상품 탐색 동선을 개선해 <strong>구매 전환율 40% → 60%</strong> 향상에 기여</li>
 							</ul>
 						</div>
 						<div class="project-item">
 							<div class="project-header">
-								<h3 class="project-title">
-									그로스 툴 도입 및 데이터 기반 홈 개선
-								</h3>
-								<span class="project-period">2024</span>
+								<h3 class="project-title">쏠북 스튜디오 - WYSIWYG Editor POC</h3>
+								<span class="project-period">2023</span>
 							</div>
 							<div class="project-tech">
-								<span class="tech-chip">Mixpanel</span>
-								<span class="tech-chip">GA</span>
-								<span class="tech-chip">GTM</span>
-								<span class="tech-chip">Sentry</span>
+								<span class="tech-chip">React</span>
+								<span class="tech-chip">TypeScript</span>
+								<span class="tech-chip">HTML to PDF</span>
+								<span class="tech-chip">Editor Library</span>
 							</div>
 							<ul class="project-description">
-								<li>Mixpanel 구매 퍼널 구축으로 데이터 기반 의사결정 지원</li>
-								<li>
-									이벤트 설계와 여러 차례의 홈 개편을 함께 진행해 <strong>구매 전환율 40% → 60%</strong>
-									향상
-								</li>
-							</ul>
-						</div>
-						<div class="project-item">
-							<div class="project-header">
-								<h3 class="project-title">샵앳피소드 매니저 - 매장 관리 앱</h3>
-								<span class="project-period">2025.01 - 2025.06</span>
-							</div>
-							<div class="project-tech">
-								<span class="tech-chip">React Native</span>
-								<span class="tech-chip">WebView</span>
-								<span class="tech-chip">Bluetooth</span>
-								<span class="tech-chip">Thermal Printer</span>
-								<span class="tech-chip">PostMessage</span>
-							</div>
-							<ul class="project-description">
-								<li>F&amp;B 매장 실시간 주문·상품 관리를 위한 <strong>Android/iOS 멀티 플랫폼 WebView</strong> 기반 매장 관리 앱 개발</li>
-								<li><strong>WebView ↔ 네이티브 PostMessage 인터페이스 설계</strong> — SSE/polling 대비 실시간 주문 처리 지연 개선</li>
-								<li>블루투스 열전사 프린터(thermal printer) 연동 — 플랫폼별 권한·연결 처리 포함</li>
-							</ul>
-						</div>
-						<div class="project-item">
-							<div class="project-header">
-								<h3 class="project-title">샵앳피소드 - F&B 사이렌오더</h3>
-								<span class="project-period">2025.01 - 2025.06</span>
-							</div>
-							<div class="project-tech">
-								<span class="tech-chip">React Native</span>
-								<span class="tech-chip">WebView</span>
-								<span class="tech-chip">canvas</span>
-								<span class="tech-chip">Push Notification</span>
-							</div>
-							<ul class="project-description">
-								<li><strong>iOS/Android WebView 환경</strong>에서 실시간 주문·결제 사이렌오더 플로우 구축</li>
-								<li>Push Notification 연동으로 실시간 주문 알림 구현</li>
-								<li>canvas 기반 UI 커스텀 렌더링 처리</li>
+								<li>저자가 문제집 콘텐츠를 직접 편집·출력·PDF 판매할 수 있도록 <strong>WYSIWYG Editor library를 커스텀한 POC</strong> 설계·구현</li>
+								<li><strong>4주 만에</strong> 편집부터 출력까지 핵심 플로우를 완성해 콘텐츠 제작 가능성을 검증하고 사업 검토용 데모로 활용</li>
 							</ul>
 						</div>
 					</section>
@@ -1499,9 +1321,7 @@
 								<p class="testimonial-content">
 									"책임감이 강하고 동료를 이해하고 배려하는 분입니다. 기획
 									과정에서 놓치는 부분들에 대해 먼저 알려주시고, 이슈가 생길
-									때에도 침착하게 원인을 파악해주십니다. 기대하지 않았던
-									부가적인 기능들까지 고객에게 필요하다고 판단되면 빠르게
-									작업해주십니다."
+									때에도 침착하게 원인을 파악해주십니다."
 								</p>
 								<div class="testimonial-author">
 									<span class="testimonial-role">Product Owner</span>
